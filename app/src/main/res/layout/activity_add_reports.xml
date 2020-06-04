@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addReports">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Patient Reports"
+        android:textColor="@android:color/white"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        >
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Full Name"
+        android:textColorHint="#34aeeb"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edit"
+        android:padding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Date of Birth"
+        android:inputType="date"
+        android:padding="20dp"
+        android:textColorHint="#2CA7E0" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="Add Patient Report"
+            android:textColor="#fff"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button"
+            />
+
+        <TextView
+            android:id="@+id/text_pah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Patient Reports"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="96dp" />
+
+        <Button
+            android:id="@+id/file"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="Add File"
+            android:textColor="#fff"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

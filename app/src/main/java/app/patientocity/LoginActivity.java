@@ -1,5 +1,6 @@
 package app.patientocity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     Button log;
     TextView tvSignUp;
+    TextView tvReset;
 
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -37,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.pass);
         log= findViewById(R.id.btn);
         tvSignUp = findViewById(R.id.textView);
+        tvReset = findViewById(R.id.reset);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -44,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if( mFirebaseUser != null ){
                     Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, WelcomeActivity.class);
+                    Intent i = new Intent(LoginActivity.this, Dashboard.class);
                     startActivity(i);
                 }
                 else{
@@ -74,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this,"Login Error, Please Login Again",Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Intent intToHome = new Intent(LoginActivity.this,WelcomeActivity.class);
+                                Intent intToHome = new Intent(LoginActivity.this, Dashboard.class);
                                 startActivity(intToHome);
                             }
                         }
@@ -92,6 +98,48 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intSignUp = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intSignUp);
+            }
+        });
+
+        tvReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intSignUp = new Intent(LoginActivity.this, Reset.class);
+//                startActivity(intSignUp);
+                EditText resetMail = new EditText(v.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Reset Password");
+                passwordResetDialog.setMessage("Enter You Email to reset your Password");
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String mail = resetMail.getText().toString();
+                        mFirebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(LoginActivity.this,"Reset info sent",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(LoginActivity.this,"Reset info hasn't been sent" + e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
+                    }
+                });
+                    passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    passwordResetDialog.create().show();
             }
         });
 

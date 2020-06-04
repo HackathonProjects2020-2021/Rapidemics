@@ -1,14 +1,14 @@
 package app.patientocity;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PatientRecords extends AppCompatActivity {
+import android.os.Bundle;
+
+public class Reset extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_records);
+        setContentView(R.layout.activity_reset);
     }
 }
