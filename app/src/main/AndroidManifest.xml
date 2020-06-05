@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.patientocity">
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
 
     <application
         android:allowBackup="true"
@@ -9,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".uploadReport"></activity>
+
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true" />
-        <activity android:name=".Reset"></activity>
+
+        <activity android:name=".Reset" />
         <activity android:name=".logout" />
         <activity android:name=".About" />
         <activity android:name=".viewReports" />
@@ -30,7 +37,5 @@
             </intent-filter>
         </activity>
     </application>
-
-
 
 </manifest>

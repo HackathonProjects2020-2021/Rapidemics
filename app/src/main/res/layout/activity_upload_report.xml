@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="211dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="Upload"
+        android:textAlignment="center"
+        android:textSize="30sp"
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:autofillHints=""
+        android:hint="Enter a PDF File Name:"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button"
+        android:text="Upload File"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+
+
+</LinearLayout>
