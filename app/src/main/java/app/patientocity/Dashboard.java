@@ -54,10 +54,10 @@ public class Dashboard extends AppCompatActivity {
                         Intent intent = new Intent(Dashboard.this,About.class);
                         startActivity(intent);
                     }
-                    else if(finalI==4){
-                        Intent intent = new Intent(Dashboard.this,Profile.class);
-                        startActivity(intent);
-                    }
+//                    else if(finalI==4){
+//                        Intent intent = new Intent(Dashboard.this,Profile.class);
+//                        startActivity(intent);
+//                    }
                     else if(finalI==5){
                         Intent intent = new Intent(Dashboard.this,WelcomeActivity.class);
                         startActivity(intent);

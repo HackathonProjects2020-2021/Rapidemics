@@ -46,7 +46,7 @@
         />
 
     <EditText
-        android:id="@+id/dob"
+        android:id="@+id/symptom"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -54,10 +54,37 @@
         android:background="@drawable/edit"
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="10dp"
-        android:hint="Date of Birth"
-        android:inputType="date"
+        android:hint="Symptom"
+        android:inputType="text"
         android:padding="20dp"
         android:textColorHint="#2CA7E0" />
+
+        <EditText
+            android:id="@+id/diag"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:hint="Diagnosis"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColorHint="#2CA7E0" />
+        <EditText
+            android:id="@+id/room"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:hint="Room Number"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColorHint="#2CA7E0" />
 
         <Button
             android:id="@+id/create"
