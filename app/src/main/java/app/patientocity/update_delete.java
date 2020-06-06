@@ -12,6 +12,12 @@ public class update_delete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_delete);
 
-        public void btnUpdate_Click(View view) {
-        }    }
+    }
+
+    public void btnDelete_Click(View view) {
+
+    }
+
+    public void btnUpdate_Click(View view) {
+    }
 }

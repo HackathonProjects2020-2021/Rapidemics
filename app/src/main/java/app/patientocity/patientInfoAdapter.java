@@ -10,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class patientInfoAdapter extends ArrayAdapter<patient> {
@@ -19,7 +17,7 @@ public class patientInfoAdapter extends ArrayAdapter<patient> {
     private List<patient> patientsList;
 
     public patientInfoAdapter(Activity context, List<patient> patientsList){
-        super(context,R.layout.list_view, patientsList);
+        super(context,R.layout.patient, patientsList);
         this.context = context;
         this.patientsList = patientsList;
     }
@@ -28,7 +26,7 @@ public class patientInfoAdapter extends ArrayAdapter<patient> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View listView = inflater.inflate(R.layout.list_view, null, true);
+        View listView = inflater.inflate(R.layout.patient, null, true);
 
 //        TextView id =  (TextView) listView.findViewById(R.id.idTextView);
         TextView name =  (TextView) listView.findViewById(R.id.nameTextView);

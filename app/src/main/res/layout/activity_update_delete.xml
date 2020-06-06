@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addReports">
+    tools:context=".update_delete">
 
     <ImageView
         android:layout_width="match_parent"
@@ -104,9 +104,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:background="@drawable/button"
-            android:text="Update Patient Info"
             android:textColor="#fff"
-            android:onClick="btnUpdate_Click"/>
+            android:onClick="btnUpdate_Click"
+            android:text="@string/update"/>
 
 
         <Button
@@ -126,9 +126,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="7dp"
             android:background="@drawable/button"
-            android:text="Delete Patient Info"
             android:textColor="#fff"
-            android:onClick="btnDelete_Click"/>
+            android:onClick="btnDelete_Click"
+            android:text="@string/delete"/>
+
 
         <TextView
             android:id="@+id/updateTextView"
