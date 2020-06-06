@@ -77,7 +77,7 @@ public class addReports extends AppCompatActivity {
         if (!TextUtils.isEmpty(n)) {
             String id = db_patients.push().getKey();
             patient p = new patient(id, n, s, d, r,dati);
-            db_patients.child(id).setValue(p);
+            db_patients.child(n).setValue(p);
             name.setText("");
             symptom.setText("");
             diag.setText("");

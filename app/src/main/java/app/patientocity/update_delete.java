@@ -3,6 +3,7 @@ package app.patientocity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,11 +31,15 @@ public class update_delete extends AppCompatActivity {
     DatabaseReference ref;
     TextView key1;
 
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_delete);
+
+        reference = FirebaseDatabase.getInstance().getReference("patients");
+
         name = (EditText) findViewById(R.id.name);
         symptom = (EditText) findViewById(R.id.symptom);
         diag = (EditText) findViewById(R.id.diag);
@@ -47,16 +52,23 @@ public class update_delete extends AppCompatActivity {
         key1 =(TextView) findViewById(R.id.key);
         key1.setText(key);
 
-        name.setText(getIntent().getStringExtra("Name"));
-        symptom.setText(getIntent().getStringExtra("Symptom"));
-        diag.setText(getIntent().getStringExtra("Diagnosis"));
-        room.setText(getIntent().getStringExtra("Room"));
-        datetime.setText(getIntent().getStringExtra("Date/Time"));
+        showAllUserData();
 
+    }
 
+    private void showAllUserData() {
+        Intent intent = getIntent();
+        String NAME = intent.getStringExtra("Name");
+        String SYMPTOM = intent.getStringExtra("Symptom");
+        String DIAGNOSIS = intent.getStringExtra("Diagnosis");
+        String ROOM = intent.getStringExtra("Room");
+        String DATETIME = intent.getStringExtra("Date/Time");
 
-
-
+        name.setText(NAME);
+        symptom.setText(SYMPTOM);
+        diag.setText(DIAGNOSIS);
+        room.setText(ROOM);
+        datetime.setText(DATETIME);
     }
 
     public void btnDelete_Click(View view) {
@@ -76,6 +88,15 @@ public class update_delete extends AppCompatActivity {
 
 
     public void btnUpdate_Click(View view) {
-        ref.child()
+        //reference.child(getIntent().getStringExtra("Name")).setValue(name.getText().toString());
+        reference.child(getIntent().getStringExtra("Name")).child("patientName").setValue(name.getText().toString());
+        reference.child(getIntent().getStringExtra("Name")).child("patientSymptom").setValue(symptom.getText().toString());
+        reference.child(getIntent().getStringExtra("Name")).child("patientDiag").setValue(diag.getText().toString());
+        reference.child(getIntent().getStringExtra("Name")).child("patientRoom").setValue(room.getText().toString());
+        reference.child(getIntent().getStringExtra("Name")).child("dateTime").setValue(datetime.getText().toString());
+
+        Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
     }
+
+
 }
