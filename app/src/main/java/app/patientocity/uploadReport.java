@@ -34,6 +34,7 @@ public class uploadReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_report);
 
+        /*
         editPDFName=(EditText)findViewById(R.id.editFileName);
         addPDF = (Button)(findViewById(R.id.file));
 
@@ -97,6 +98,8 @@ public class uploadReport extends AppCompatActivity {
                 progressDialog.setMessage("Uploaded"+(int)progress+"%");
             }
         });
+
+         */
     }
 
 }
