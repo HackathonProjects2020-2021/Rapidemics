@@ -30,7 +30,7 @@ public class patientInfoAdapter extends ArrayAdapter<patient> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listView = inflater.inflate(R.layout.list_view, null, true);
 
-        TextView id =  (TextView) listView.findViewById(R.id.idTextView);
+//        TextView id =  (TextView) listView.findViewById(R.id.idTextView);
         TextView name =  (TextView) listView.findViewById(R.id.nameTextView);
         TextView symptoms =  (TextView) listView.findViewById(R.id.symptomsTextView);
         TextView diagnosis =  (TextView) listView.findViewById(R.id.diagnosisTextView);
@@ -38,7 +38,7 @@ public class patientInfoAdapter extends ArrayAdapter<patient> {
         TextView datetime =  (TextView) listView.findViewById(R.id.datetimeTextView);
 
         patient p = patientsList.get(position);
-        id.setText(p.getPatienId());
+//        id.setText(p.getPatienId());
         name.setText(p.getPatientName());
         symptoms.setText(p.getPatientSymptom());
         diagnosis.setText(p.getPatientDiag());

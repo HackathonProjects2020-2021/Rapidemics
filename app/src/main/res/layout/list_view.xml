@@ -4,42 +4,83 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <TextView
-        android:id="@+id/idTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Patient Records"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="35sp" />
+
 
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:text="TextView"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
 
     <TextView
         android:id="@+id/symptomsTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="8dp"
+
+        android:text="TextView"
+        android:textSize="18sp"
+
+        android:textStyle="italic"
+        android:textAlignment="center"
+        />
 
     <TextView
         android:id="@+id/diagnosisTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="8dp"
+
+        android:text="TextView"
+        android:textSize="18sp"
+
+        android:textStyle="italic"
+
+        android:textAlignment="center"
+        />
 
     <TextView
         android:id="@+id/roomTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="8dp"
+
+        android:text="TextView"
+        android:textSize="18sp"
+
+        android:textStyle="italic"
+
+        android:textAlignment="center"
+        />
 
     <TextView
         android:id="@+id/datetimeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="8dp"
+
+        android:text="TextView"
+        android:textSize="18sp"
+
+        android:textStyle="italic"
+
+        android:textAlignment="center"
+        />
+
+   
+
+
 </LinearLayout>
