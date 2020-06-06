@@ -1,7 +1,9 @@
 package app.patientocity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -58,6 +60,21 @@ public class viewReports extends AppCompatActivity {
             }
         };
         lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent updateDelete = new Intent(viewReports.this,update_delete.class);
+                patient pa =  (patient)parent.getItemAtPosition(position);
+                updateDelete.putExtra("Name",pa.getPatientName());
+                updateDelete.putExtra("Symptom",pa.getPatientSymptom());
+                updateDelete.putExtra("Diagnosis",pa.getPatientDiag());
+                updateDelete.putExtra("Room",pa.getPatientRoom());
+                updateDelete.putExtra("Room",pa.getDateTime());
+                updateDelete.putExtra("key",pa.getPatienId());
+                startActivity(updateDelete);
+            }
+        });
     }
 
     @Override
