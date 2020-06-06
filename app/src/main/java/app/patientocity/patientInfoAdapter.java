@@ -40,10 +40,10 @@ public class patientInfoAdapter extends ArrayAdapter<patient> {
         patient p = patientsList.get(position);
         id.setText(p.getPatienId());
         name.setText(p.getPatientName());
-        id.setText(p.getPatientSymptom());
-        id.setText(p.getPatientDiag());
-        id.setText(p.getPatientRoom());
-        id.setText(p.getDateTime());
+        symptoms.setText(p.getPatientSymptom());
+        diagnosis.setText(p.getPatientDiag());
+        room.setText(p.getPatientRoom());
+        datetime.setText(p.getDateTime());
 
         return listView;
 

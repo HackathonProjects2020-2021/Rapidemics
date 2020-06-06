@@ -52,7 +52,7 @@ public class viewReports extends AppCompatActivity {
 
         listview = findViewById(R.id.list_viewListView);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Patient");
+        databaseReference = FirebaseDatabase.getInstance().getReference("patients");
 
         patientslist = new ArrayList<>();
 
