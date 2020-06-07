@@ -88,12 +88,12 @@ public class update_delete extends AppCompatActivity {
 
 
     public void btnUpdate_Click(View view) {
-        //reference.child(getIntent().getStringExtra("Name")).setValue(name.getText().toString());
-        reference.child(getIntent().getStringExtra("Name")).child("patientName").setValue(name.getText().toString());
-        reference.child(getIntent().getStringExtra("Name")).child("patientSymptom").setValue(symptom.getText().toString());
-        reference.child(getIntent().getStringExtra("Name")).child("patientDiag").setValue(diag.getText().toString());
-        reference.child(getIntent().getStringExtra("Name")).child("patientRoom").setValue(room.getText().toString());
-        reference.child(getIntent().getStringExtra("Name")).child("dateTime").setValue(datetime.getText().toString());
+
+        reference.child(getIntent().getStringExtra("key")).child("patientName").setValue(name.getText().toString());
+        reference.child(getIntent().getStringExtra("key")).child("patientSymptom").setValue(symptom.getText().toString());
+        reference.child(getIntent().getStringExtra("key")).child("patientDiag").setValue(diag.getText().toString());
+        reference.child(getIntent().getStringExtra("key")).child("patientRoom").setValue(room.getText().toString());
+        reference.child(getIntent().getStringExtra("key")).child("dateTime").setValue(datetime.getText().toString());
 
         Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
     }
