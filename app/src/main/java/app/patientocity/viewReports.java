@@ -20,8 +20,8 @@ import java.util.List;
 
 public class viewReports extends AppCompatActivity {
 
-     ListView lv;
-     FirebaseListAdapter adapter;
+    ListView lv;
+    FirebaseListAdapter adapter;
 
 
     @Override
@@ -36,7 +36,7 @@ public class viewReports extends AppCompatActivity {
                 .setLayout(R.layout.patient)
                 .setLifecycleOwner(viewReports.this)
                 .setQuery(query,patient.class)
-                 .build();
+                .build();
         adapter = new FirebaseListAdapter(options) {
             @Override
             protected void populateView(@NonNull View v, @NonNull Object model, int position) {
@@ -45,6 +45,9 @@ public class viewReports extends AppCompatActivity {
                 TextView diag  = v.findViewById(R.id.diagnosisTextView);
                 TextView room  = v.findViewById(R.id.roomTextView);
                 TextView datetime =   v.findViewById(R.id.datetimeTextView);
+                TextView dis1 =   v.findViewById(R.id.dis1);
+                TextView dis2 =   v.findViewById(R.id.dis2);
+
 
 
                 patient p = (patient) model;
@@ -53,6 +56,9 @@ public class viewReports extends AppCompatActivity {
                 diag.setText("Diagnosis:"+p.getPatientDiag().toString());
                 room.setText("Room:"+p.getPatientRoom().toString());
                 datetime.setText("Date/Time:"+p.getDateTime().toString());
+                dis1.setText("Disease 1:"+p.getDis1().toString());
+                dis2.setText("Disease 2:"+p.getDis2().toString());
+
 
 
 
@@ -70,7 +76,9 @@ public class viewReports extends AppCompatActivity {
                 updateDelete.putExtra("Symptom",pa.getPatientSymptom());
                 updateDelete.putExtra("Diagnosis",pa.getPatientDiag());
                 updateDelete.putExtra("Room",pa.getPatientRoom());
-                updateDelete.putExtra("Room",pa.getDateTime());
+                updateDelete.putExtra("Date/Time",pa.getDateTime());
+                updateDelete.putExtra("Disease 1",pa.getDis1());
+                updateDelete.putExtra("Disease 2",pa.getDis2());
                 updateDelete.putExtra("key",pa.getPatienId());
                 startActivity(updateDelete);
             }
