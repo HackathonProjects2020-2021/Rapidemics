@@ -43,7 +43,7 @@ public class addReports extends AppCompatActivity {
         symptom = (EditText) findViewById(R.id.symptom);
         diag = (EditText) findViewById(R.id.diag);
         room = (EditText) findViewById(R.id.room);
-        datetime = (EditText) findViewById(R.id.room);
+        datetime = (EditText) findViewById(R.id.date);
 
 
         add = (Button) findViewById(R.id.create);

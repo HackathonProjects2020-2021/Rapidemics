@@ -41,7 +41,7 @@ public class patient
     }
 
     public String getDateTime() {
-        return patientRoom;
+        return datetime;
     }
 
 
