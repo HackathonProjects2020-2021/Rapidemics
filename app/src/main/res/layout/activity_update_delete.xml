@@ -19,9 +19,9 @@
 
     <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/date" android:layout_gravity="center" android:textColorHint="#2CA7E0" android:padding="20dp" android:inputType="datetime" android:hint="Date Time" android:drawablePadding="10dp" android:drawableLeft="@drawable/ic_person" android:background="@drawable/edit"/>
 
-    <EditText android:layout_height="wrap_content" android:layout_width="190dp" android:id="@+id/dis1" android:layout_gravity="center" android:textColorHint="#2CA7E0" android:padding="20dp" android:inputType="number" android:hint="Disease 1 #%" android:drawablePadding="10dp" android:drawableLeft="@drawable/ic_person" android:background="@drawable/edit"/>
+<!--    <EditText android:layout_height="wrap_content" android:layout_width="190dp" android:id="@+id/dis1" android:layout_gravity="center" android:textColorHint="#2CA7E0" android:padding="20dp" android:inputType="text" android:hint="Disease 1 #%" android:drawablePadding="10dp" android:drawableLeft="@drawable/ic_person" android:background="@drawable/edit"/>-->
 
-    <EditText android:layout_height="wrap_content" android:layout_width="184dp" android:id="@+id/dis2" android:layout_gravity="center" android:textColorHint="#2CA7E0" android:padding="20dp" android:inputType="number" android:hint="Disease 2 #%" android:drawablePadding="10dp" android:drawableLeft="@drawable/ic_person" android:background="@drawable/edit"/>
+<!--    <EditText android:layout_height="wrap_content" android:layout_width="184dp" android:id="@+id/dis2" android:layout_gravity="center" android:textColorHint="#2CA7E0" android:padding="20dp" android:inputType="text" android:hint="Disease 2 #%" android:drawablePadding="10dp" android:drawableLeft="@drawable/ic_person" android:background="@drawable/edit"/>-->
 
     <Button android:layout_height="60dp" android:layout_width="300dp" android:id="@+id/updateButton" android:layout_gravity="center" android:background="@drawable/button" android:layout_marginTop="4dp" android:text="@string/update" android:onClick="btnUpdate_Click" android:textColor="#fff"/>
 

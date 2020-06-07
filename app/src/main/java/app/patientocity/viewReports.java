@@ -45,19 +45,19 @@ public class viewReports extends AppCompatActivity {
                 TextView diag  = v.findViewById(R.id.diagnosisTextView);
                 TextView room  = v.findViewById(R.id.roomTextView);
                 TextView datetime =   v.findViewById(R.id.datetimeTextView);
-                TextView dis1 =   v.findViewById(R.id.dis1);
-                TextView dis2 =   v.findViewById(R.id.dis2);
+//                TextView dis1 =   v.findViewById(R.id.dis1);
+//                TextView dis2 =   v.findViewById(R.id.dis2);
 
 
 
                 patient p = (patient) model;
-                name.setText("Name:"+p.getPatientName().toString());
+                name.setText("Patient Name:"+p.getPatientName().toString());
                 symptom.setText("Symptoms:"+p.getPatientSymptom().toString());
                 diag.setText("Diagnosis:"+p.getPatientDiag().toString());
                 room.setText("Room:"+p.getPatientRoom().toString());
                 datetime.setText("Date/Time:"+p.getDateTime().toString());
-                dis1.setText("Disease 1:"+p.getDis1().toString());
-                dis2.setText("Disease 2:"+p.getDis2().toString());
+//                dis1.setText("Disease 1:"+p.getDis1().toString());
+//                dis2.setText("Disease 2:"+p.getDis2().toString());
 
 
 
@@ -77,8 +77,8 @@ public class viewReports extends AppCompatActivity {
                 updateDelete.putExtra("Diagnosis",pa.getPatientDiag());
                 updateDelete.putExtra("Room",pa.getPatientRoom());
                 updateDelete.putExtra("Date/Time",pa.getDateTime());
-                updateDelete.putExtra("Disease 1",pa.getDis1());
-                updateDelete.putExtra("Disease 2",pa.getDis2());
+//                updateDelete.putExtra("Disease 1",pa.getDis1());
+//                updateDelete.putExtra("Disease 2",pa.getDis2());
                 updateDelete.putExtra("key",pa.getPatienId());
                 startActivity(updateDelete);
             }

@@ -30,6 +30,8 @@ public class update_delete extends AppCompatActivity {
     EditText datetime;
     DatabaseReference ref;
     TextView key1;
+//    EditText dis1;
+////    EditText dis2;
 
     DatabaseReference reference;
 
@@ -45,6 +47,9 @@ public class update_delete extends AppCompatActivity {
         diag = (EditText) findViewById(R.id.diag);
         room = (EditText) findViewById(R.id.room);
         datetime = (EditText) findViewById(R.id.date);
+//        dis1 = (EditText) findViewById(R.id.dis1);
+//        dis2 = (EditText) findViewById(R.id.dis2);
+
 
         String key =  getIntent().getExtras().get("key").toString();
 
@@ -63,12 +68,18 @@ public class update_delete extends AppCompatActivity {
         String DIAGNOSIS = intent.getStringExtra("Diagnosis");
         String ROOM = intent.getStringExtra("Room");
         String DATETIME = intent.getStringExtra("Date/Time");
+        String DIS1 = intent.getStringExtra("Disease 1");
+        String DIS2 = intent.getStringExtra("Disease 2");
+
 
         name.setText(NAME);
         symptom.setText(SYMPTOM);
         diag.setText(DIAGNOSIS);
         room.setText(ROOM);
         datetime.setText(DATETIME);
+//        dis1.setText(DIS1);
+//        dis2.setText(DIS2);
+
     }
 
     public void btnDelete_Click(View view) {
@@ -94,6 +105,10 @@ public class update_delete extends AppCompatActivity {
         reference.child(getIntent().getStringExtra("key")).child("patientDiag").setValue(diag.getText().toString());
         reference.child(getIntent().getStringExtra("key")).child("patientRoom").setValue(room.getText().toString());
         reference.child(getIntent().getStringExtra("key")).child("dateTime").setValue(datetime.getText().toString());
+//        reference.child(getIntent().getStringExtra("key")).child("dis1").setValue(dis1.getText().toString());
+//        reference.child(getIntent().getStringExtra("key")).child("dis2").setValue(dis2.getText().toString());
+        reference.child(getIntent().getStringExtra("key")).child("symptomsHistory").child(datetime.getText().toString()).setValue(symptom.getText().toString());
+
 
         Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
     }
